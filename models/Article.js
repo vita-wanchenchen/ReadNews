@@ -13,7 +13,11 @@ var ArticleSchema = new Schema({
         required: true,
         unique: true
     },
-
+    // summary: {
+    //     type: String,
+    //     required: true,
+    //     unique: true
+    // },
     timestamp: {
         type: Date,
         default: Date.now

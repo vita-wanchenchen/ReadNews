@@ -25,7 +25,6 @@ var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/bbc-technews";
 
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 
-// mongoose.connect("mongodb://localhost/bbc-technews", { useNewUrlParser: true });
 
 // Check connection status
 var db = mongoose.connection;
@@ -35,10 +34,6 @@ db.on("error", function(error) {
 
 require("./routes/routes.js")(app);
 
-  // Start the server
-  // app.listen(PORT, function() {
-  //   console.log("App running on port " + PORT + "!");
-  // });
   app.listen(process.env.PORT || PORT, function(){
     console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
   });
