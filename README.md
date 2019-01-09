@@ -5,6 +5,8 @@ This application built with HTML, CSS, Bootstrap, jQuery, Express.js with JavaSc
 
 ## Live Demo: 
 
+https://secret-ravine-22777.herokuapp.com/
+
 ## NPM Package installed for this app:
 
 1. Express (https://www.npmjs.com/package/express)
@@ -21,7 +23,7 @@ This application built with HTML, CSS, Bootstrap, jQuery, Express.js with JavaSc
 
 ## How to use Mongoose-Scraper
 
-1. Go to Live Demo () to start the app.
+1. Go to Live Demo (https://secret-ravine-22777.herokuapp.com/) to start the app.
 
 2. Click on "Scrape New Articles" to showing latest Tech news.
 
