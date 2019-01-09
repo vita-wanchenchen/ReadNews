@@ -21,7 +21,7 @@ app.engine("handlebars", handlebars({defaultLayout: "main"}));
 app.set("view engine", "handlebars");
 
 // Connect to the Mongo DB
-mongoose.connect("mongodb://localhost/unit18Populater", { useNewUrlParser: true });
+mongoose.connect("mongodb://localhost/bbc-technews", { useNewUrlParser: true });
 
 // Check connection status
 var db = mongoose.connection;

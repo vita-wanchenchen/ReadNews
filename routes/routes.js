@@ -45,6 +45,10 @@ module.exports = function (app) {
                 var title = $(this).children('a').children('h3').children('span').text();
                 console.log("title",title);
                 var link = $(this).children('a').attr('href');
+                var linkBegin = link.substring(0, 4);
+                    if (linkBegin != "http") {
+                        link = "http://www.bbc.com" + link;
+                    }
                 console.log("link",link);
                 // var summary = $(this).children('p').text();
 
