@@ -3,10 +3,6 @@ var logger = require("morgan");
 var mongoose = require("mongoose");
 var handlebars = require("express-handlebars");
 
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
-
-mongoose.connect(MONGODB_URI);
-
 var PORT = 3000;
 
 // Initialize Express
@@ -25,7 +21,11 @@ app.engine("handlebars", handlebars({defaultLayout: "main"}));
 app.set("view engine", "handlebars");
 
 // Connect to the Mongo DB
-mongoose.connect("mongodb://localhost/bbc-technews", { useNewUrlParser: true });
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/bbc-technews";
+
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
+
+// mongoose.connect("mongodb://localhost/bbc-technews", { useNewUrlParser: true });
 
 // Check connection status
 var db = mongoose.connection;
@@ -36,7 +36,10 @@ db.on("error", function(error) {
 require("./routes/routes.js")(app);
 
   // Start the server
-  app.listen(PORT, function() {
-    console.log("App running on port " + PORT + "!");
+  // app.listen(PORT, function() {
+  //   console.log("App running on port " + PORT + "!");
+  // });
+  app.listen(process.env.PORT || PORT, function(){
+    console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
   });
   
