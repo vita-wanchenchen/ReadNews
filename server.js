@@ -21,11 +21,11 @@ app.engine("handlebars", handlebars({defaultLayout: "main"}));
 app.set("view engine", "handlebars");
 
 // Connect to the Mongo DB
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/bbc-technews";
+// var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/bbc-technews";
 
-mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
+// mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 
-// mongoose.connect("mongodb://localhost/bbc-technews", { useNewUrlParser: true });
+mongoose.connect("mongodb://localhost/bbc-technews", { useNewUrlParser: true });
 
 // Check connection status
 var db = mongoose.connection;
